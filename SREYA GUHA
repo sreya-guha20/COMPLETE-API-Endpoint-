@@ -1,0 +1,66 @@
+EXAMPLE 1
+
+METHOD: POST
+
+ENDPOINT:https://jsonmock.hackerrank.com/api
+
+REQUEST: 
+data": [“M”,”1”,”334”,”4”,”B”]
+
+CODE:
+import requests
+
+url = "https://jsonmock.hackerrank.com/api/football_competitions?name=English Premier League&year=2014"
+
+payload = "<file contents here>"
+headers = {
+  'is_success': 'True',
+  'Userid': 'sreya123',
+  'collegeemailid': 'sm8473@srmist.edu.in',
+  'collegerollnumber': 'RA2111008020018',
+  'arrayfornumbers': '1,334,4',
+  'arrayforalphabets': '{"M","D"}',
+  'Content-Type': 'text/html'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+
+EXAMPLE 2
+
+METHOD: GET
+
+ENDPOINT:https://jsonmock.hackerrank.com/api
+
+HTTP STATUS CODE:
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+	200
+
+</body>
+
+</html>
+
+CODE:
+import requests
+
+url = "https://jsonmock.hackerrank.com/api/"
+
+payload = "<file contents here>"
+headers = {
+  'is_success': 'True',
+  'Userid': 'sreya123',
+  'emailid': 'sreyaguha2003@gmail.com',
+  'collegerollnumber': 'RA2111008020018',
+  'numbers': '["2","4","5","92"]',
+  'alphabets': '[]',
+  'highest_alphabet': '[]',
+  'Content-Type': 'text/html'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
